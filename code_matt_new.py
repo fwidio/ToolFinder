@@ -19,9 +19,12 @@ st.set_page_config(layout="wide", page_title="Tool Finder for Electric Vehicle")
 
 
 # Load data from Excel file (two sheets: Word and Number)
-file_path = r"C:\Users\fwidio\Downloads\Database Master.xlsx"
-df_word = pd.read_excel(file_path, sheet_name='Word', usecols=['Category', 'Relevant Word', 'Bin Location','Part Number'])
-df_number = pd.read_excel(file_path, sheet_name='Number', usecols=['Category', 'Number', 'Bin'])
+
+# URL of the file in the GitHub repository
+url = 'https://raw.githubusercontent.com/fwidio/ToolFinder/main/Database%20Master.xlsx'
+
+df_word = pd.read_excel(url, sheet_name='Word', usecols=['Category', 'Relevant Word', 'Bin Location','Part Number'])
+df_number = pd.read_excel(url, sheet_name='Number', usecols=['Category', 'Number', 'Bin'])
 
 
 # Define the path for the images (outside of the conditional blocks)
